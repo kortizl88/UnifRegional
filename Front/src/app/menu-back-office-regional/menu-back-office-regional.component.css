@@ -1,0 +1,14 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+.barTitulo{
+  border-bottom: 1px solid #b71c1c;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px #ccc; 
+}

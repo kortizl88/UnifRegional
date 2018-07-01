@@ -1,0 +1,30 @@
+<div class="login">
+  <div class="col">
+    <img src="../assets/img/ico_baz.jpg" width="180" />
+    <div class="sist">Sistema de Uniformes</div>
+    <div class="bck">BackOffice Regional</div>
+  </div>
+  <div class="col brdIzq">
+        <form [formGroup]="form" (ngSubmit)="ingreso()">
+          <div class="ingDat">Por favor, ingrese sus datos</div>
+          <br>
+          <mat-form-field class="full-width-input">
+            <input type="text" matInput  placeholder="Número de Empleado" formControlName="userName" required>
+            <mat-error *ngIf="isFieldInvalid('userName')">
+              Ingrese su número
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <br>
+          <mat-form-field class="full-width-input">
+            <input type="password" matInput  placeholder="Llave Maestra" formControlName="password" required>
+            <mat-error *ngIf="isFieldInvalid('password')">
+                Ingrese su Llave
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <br>
+          <button mat-raised-button color="primary">Ingresar</button>
+        </form>
+  </div>
+</div>

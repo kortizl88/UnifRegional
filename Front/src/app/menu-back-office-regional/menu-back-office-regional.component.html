@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isLoggedIn$ | async)">
+    <mat-toolbar color="primary"></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['reasignacion']">Reasignación</a>
+      <a mat-list-item [routerLink]="['reporte']">Reporte</a>
+      <a mat-list-item [routerLink]="['cascos']">Cascos</a>
+      <a mat-list-item (click)="drawer.close() && onLogout()">Salir</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="barTitulo" *ngIf="isLoggedIn$ | async">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()" >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      &nbsp;&nbsp;&nbsp;
+      <span><b>Sistema de Uniformes</b></span>
+      &nbsp;&nbsp;
+      <img src="../assets/img/ico_baz.jpg" width="50" />
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
